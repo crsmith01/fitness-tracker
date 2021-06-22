@@ -8,10 +8,30 @@ const db = require('../models');
 
 // Get (read) workouts
 app.get('/api/workouts', (req, res) => {
-    db.Workout.
+    db.Workout.find({})
+        .then(fitnessDB => {
+            res.json(fitnessDB)
+        })
 });
 
-'api/workouts/range'
+// Get - total duration of a workout (summation of duration of exercises in a workout)
+app.get('api/workouts/range', (req, res) => {
+    db.Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: {
+                    $sum: `$exercises.duration`
+                }
+            }
+        }
+    ])
+        .then((fitnessDB) => {
+            res.json(fitnessDB);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
 
 // Post (create/insert) workouts
 app.post('/api/workouts', (req, res) => {
@@ -25,7 +45,35 @@ app.post('/api/workouts', (req, res) => {
 });
 
 // Put (update) workouts
-'api/workouts/:id'
+// findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
+app.put('api/workouts/:id', ({ body, params }, res => {
+    db.Workout.findByIdAndUpdate(
+        params.id, {
+        $push: {
+            exercises: body
+        }
+    },
+        {
+            new: true, runValidators: true
+        }
+    )
+        .then((fitnessDB) => {
+            res.json(fitnessDB);
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
 
 
 // Delete (remove) workout
+// findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
+app.delete('/api/workouts/:id', ({body, params}, res) => {
+    db.Workout.findByIdAndDelete(body.id)
+        .then((data) => {
+            res.json(data)
+        })
+        .catch((err) => {
+            res.json(err);
+        });
+});
