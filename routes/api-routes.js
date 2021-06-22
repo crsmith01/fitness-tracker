@@ -63,12 +63,12 @@ app.put('api/workouts/:id', ({ body, params }, res => {
         .catch((err) => {
             res.json(err);
         });
-});
+}));
 
 
 // Delete (remove) workout
 // findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
-app.delete('/api/workouts/:id', ({body, params}, res) => {
+app.delete('/api/workouts/:id', ({ body, params }, res) => {
     db.Workout.findByIdAndDelete(body.id)
         .then((data) => {
             res.json(data)
