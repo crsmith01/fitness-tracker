@@ -59,27 +59,8 @@ The following link leads to the deployed application on Heroku:
 ![Heroku Link](_____________)
 
 ## Usage
-To run the app locally, follow these steps:
-1. Install the necessary dependencies. Navigate to the repository's root directory and run the following: 
-```
-npm install
-```
-2. Create a .env file in the root directory. It should contain the following information:
-```
-DB_NAME=your database name
-DB_USER=your username (often 'root')
-DB_PASSWORD=your password
-```
-3. Create your own database by running the following query in MySQL Workbench:
-```
-DROP DATABASE IF EXISTS techBlog_db;
-CREATE DATABASE techBlog_db;
-```
-4. To seed the database, enter the following:
-```
-node seeds/node
-```
-5. To start the server, enter the following:
+<!-- UPDATE UPDATE UPDATE -->
+To start the server, enter the following:
 ```
 npm start
 ```
