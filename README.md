@@ -23,7 +23,8 @@ My task this week is to create a workout tracker application. I was provided wit
 2. Express.js
 3. Node.js
 4. MongoDB
-5. Robo3T
+5. Mongoose
+6. Robo3T
 ```
 
 ## User Story
@@ -61,6 +62,8 @@ The following link leads to the deployed application on Heroku:
 ## Usage
 <!-- UPDATE UPDATE UPDATE -->
 To start the server, enter the following:
+<!-- make sure this is what package.json file says -->
+
 ```
 npm start
 ```
