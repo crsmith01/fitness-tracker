@@ -19,7 +19,17 @@ app.use(express.static("public"));
 
 // Connect to Mongoose database and logging port
 // might need more here with booleans - research and come back to
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessDB", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessDB", { 
+    // to handle deprecation warnings
+    // because of the deprecation warning with the tool MongoDB Node.js uses to parse MongoDB Connection Strings
+    useNewUrlParser: true,
+    // if using findOneAndUpdate() or findOneAndDelete in api routes - need to use useFindAndModify: false - because of deprecation warnings
+    useFindAndModify: false,
+    // configure to use createIndex instead of ensureIndex (a default of Mongoose 5.x)
+    useCreateIndex: true,
+    // to opt in on using the new topology engine from MongoDB driver 3.3x (which is used in Mongoose 5.7)
+    useUnifiedTopology: true
+});
 
 // Routes
 require('./routes/api-routes');

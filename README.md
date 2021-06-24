@@ -25,6 +25,8 @@ My task this week is to create a workout tracker application. I was provided wit
 4. MongoDB
 5. Mongoose
 6. Robo3T
+7. Heroku
+8. HTML and CSS
 ```
 
 ## User Story
