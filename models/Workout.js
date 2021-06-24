@@ -1,6 +1,6 @@
 // Dependencies
-
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
@@ -9,6 +9,7 @@ const WorkoutSchema = new Schema({
     day: {
         type: Date,
         default: ()=> new Date()
+        // or default: Date.now
     },
     exercises: [{
         type: {
@@ -18,8 +19,10 @@ const WorkoutSchema = new Schema({
         },
         name: {
             type: String,
+            trim: true,
             required: 'Enter the name of the exercise (i.e. bicep curl, push press, bench press, etc.)'
         },
+        // should I set a default for any of these?
         // what exactly does it mean - minutes?
         duration: {
             type: Number,
