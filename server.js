@@ -21,7 +21,7 @@ app.use(compression());
 
 // Connect to Mongoose database and logging port
 // might need more here with booleans - research and come back to
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessDB", { 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
     // to handle deprecation warnings
     // because of the deprecation warning with the tool MongoDB Node.js uses to parse MongoDB Connection Strings
     useNewUrlParser: true,
