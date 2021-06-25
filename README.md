@@ -27,6 +27,7 @@ My task this week is to create a workout tracker application. I was provided wit
 6. Robo3T
 7. Heroku
 8. HTML and CSS
+9. Compression
 ```
 
 ## User Story
