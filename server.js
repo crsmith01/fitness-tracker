@@ -43,5 +43,5 @@ app.use(require('./routes/html-routes'));
 
 // Calling server to listen
 app.listen(3002, () => {
-    console.log("App running on port 3002!");
+    console.log(`App running on port ${PORT}!`);
 });
