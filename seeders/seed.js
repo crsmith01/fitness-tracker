@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const db = require('../models');
 
+// Makes its own connection, so it doesn't even need server file to run (so long as models folder is set up correctly)
 mongoose.connect('mongodb://localhost/workout', {
   useNewUrlParser: true,
   useFindAndModify: false,
