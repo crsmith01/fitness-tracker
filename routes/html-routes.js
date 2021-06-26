@@ -5,17 +5,17 @@ const path = require('path');
 
 // 3 get routes - exercise.html, index.html, and stat.html in public folder 
 router.get('/', async (req, res) => {
-    // Here, index.html is rendered
+    // Index.html is rendered at endpoint /
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 router.get('/exercise', async (req, res) => {
-    // Here, exercise.html is rendered
+    // Exercise.html is rendered at endpoint /exercise
     res.sendFile(path.join(__dirname, '../public/exercise.html'));
 });
 
 router.get('/stats', async (req, res) => {
-    // Here, stats.html is rendered
+    // Stats.html is rendered at endpoint/stats
     res.sendFile(path.join(__dirname, '../public/stats.html'));
 });
 
