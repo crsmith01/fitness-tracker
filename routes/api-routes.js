@@ -1,6 +1,7 @@
 // Dependencies
 const router = require('express').Router();
 const db = require('../models');
+const path = require('path');
 
 
 // use aggregate function to dynamically add up and return the total duration for each workout
@@ -52,25 +53,25 @@ router.post('/api/workouts', (req, res) => {
 
 // Put (update) workouts
 // findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
-router.put('api/workouts/:id', ({ body, params }, res => {
-    db.Workout.findByIdAndUpdate(
-        params.id, {
-        $push: {
-            exercises: body
-        }
-    },
-        {
-            new: true, runValidators: true
-        }
-    )
-        .then((fitnessDB) => {
-            res.json(fitnessDB);
-        })
-        .catch((err) => {
-            console.log(err);
-            res.json(err);
-        });
-}));
+// router.put('api/workouts/:id', ({ body, params }, res => {
+//     db.Workout.findByIdAndUpdate(
+//         params.id, {
+//         $push: {
+//             exercises: body
+//         }
+//     },
+//         {
+//             new: true, runValidators: true
+//         }
+//     )
+//         .then((fitnessDB) => {
+//             res.json(fitnessDB);
+//         })
+//         .catch((err) => {
+//             console.log(err);
+//             res.json(err);
+//         });
+// }));
 
 
 // Delete (remove) workout
