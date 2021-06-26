@@ -1,8 +1,8 @@
 // Dependencies
 const express = require("express");
-const logger = require("morgan");
+// const logger = require("morgan");
 const mongoose = require("mongoose");
-const compression = require('compression');
+// const compression = require('compression');
 
 // Port
 const PORT = process.env.PORT || 3002;
@@ -13,11 +13,11 @@ const db = require("./models");
 const app = express();
 
 // Middleware
-app.use(logger("dev"));
+// app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(compression());
+// app.use(compression());
 
 // Connect to Mongoose database and logging port
 // mongodb_uri is used for Heroku deployment
@@ -34,9 +34,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 });
 
 // Routes
-require('./routes/api-routes');
-require('./routes/html-routes');
-
+app.use(require('./routes'));
 
 // Calling server to listen
 app.listen(3002, () => {
