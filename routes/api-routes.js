@@ -9,6 +9,7 @@ const path = require('path');
 
 // Get (read) workouts
 router.get('/api/workouts', (req, res) => {
+    console.log('hi')
     db.Workout.find({})
         .then(fitnessDB => {
             res.json(fitnessDB)
