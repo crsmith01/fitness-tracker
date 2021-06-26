@@ -19,13 +19,5 @@ router.get('/stats', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/stats.html'));
 });
 
-// should be ../, right = means the parent of the current directory.
-// have tried:
-// html = the html file in the same folder a the current page = not true
-// public/... = the html file is located in the public folder at the root of the current foler = not true
-// /public/.... = the html file is located in the public folder at the root of the current web
-// ./public/...= the html is in the public folder,which is in the current folder?
-// ../public/... = the html file is located in the folder one level up from the current folder
-
 
 module.exports = router;
