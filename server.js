@@ -20,6 +20,7 @@ app.use(express.static("public"));
 app.use(compression());
 
 // Connect to Mongoose database and logging port
+// mongodb_uri is used for Heroku deployment
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
     // to handle deprecation warnings
     // because of the deprecation warning with the tool MongoDB Node.js uses to parse MongoDB Connection Strings

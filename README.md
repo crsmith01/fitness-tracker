@@ -64,12 +64,9 @@ The following link leads to the deployed application on Heroku:
 
 ## Usage
 <!-- UPDATE UPDATE UPDATE -->
-To start the server, enter the following:
-<!-- make sure this is what package.json file says -->
+1. Install dependencies: ```npm install```
 
-```
-npm start
-```
+2. Start the server with ```npm start```
 
 ## Contact
 If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
