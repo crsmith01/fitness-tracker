@@ -1,6 +1,6 @@
 # Fitness Tracker
 Application to allow users to view, create, and track daily workouts
-![Click to view deployed application on Heroku](______________)
+[Click to view deployed application on Heroku](https://protected-tundra-70136.herokuapp.com/)
 
 
 ## My Task
@@ -62,10 +62,10 @@ The follow images demonstrate the app's functionality:
 ![Stats](/public/assets/images/stats.png)
 
 The following link leads to the GitHub repository for this app:
-![GitHub Link](https://github.com/crsmith01/fitness-tracker)
+[GitHub Link](https://github.com/crsmith01/fitness-tracker)
 
 The following link leads to the deployed application on Heroku:
-![Heroku Link](_____________)
+[Heroku Link](https://protected-tundra-70136.herokuapp.com/)
 
 ## Contact
 If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
