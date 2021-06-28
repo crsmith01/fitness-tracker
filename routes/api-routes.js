@@ -9,7 +9,6 @@ const path = require('path');
 
 // Get (read) workouts
 router.get('/api/workouts', (req, res) => {
-    console.log('hi - this is not showing so this route is not hitting???')
     db.Workout.find({})
         .then(fitnessDB => {
             res.json(fitnessDB)
