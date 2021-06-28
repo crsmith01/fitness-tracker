@@ -21,24 +21,25 @@ router.get('/api/workouts', (req, res) => {
 });
 
 // Get - total duration of a workout (summation of duration of exercises in a workout)
-router.get('api/workouts/range', (req, res) => {
+// WORKS
+router.get('/api/workouts/range', (req, res) => {
     db.Workout.aggregate([
         {
             $addFields: {
                 totalDuration: {
-                    $sum: `$exercises.duration`
+                    $sum: '$exercises.duration'
                 }
             }
         }
     ])
-        .then((fitnessDB) => {
+       
+        .then(fitnessDB => {
             res.json(fitnessDB);
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(err => {
             res.json(err);
-        });
-});
+        })
+})
 
 // Post (create/insert) workouts
 // WORKS
@@ -55,7 +56,7 @@ router.post('/api/workouts', (req, res) => {
 
 // Put (update) workouts
 // findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
-
+// WORKS - I think? - Id is just very long with MongoDB so need to c&p
 router.put('/api/workouts/:id', ({ body , params }, res) => {
     console.log({ body })
     db.Workout.findByIdAndUpdate(
