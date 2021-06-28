@@ -32,7 +32,6 @@ router.get('/api/workouts/range', (req, res) => {
             }
         }
     ])
-       
         .then(fitnessDB => {
             res.json(fitnessDB);
         })
@@ -75,6 +74,7 @@ router.put('/api/workouts/:id', ({ body , params }, res) => {
 // Delete (remove) workout
 // findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
 // WORKS
+// params might not need to be passed in argument ???????
 router.delete('/api/workouts/:id', ({ body, params }, res) => {
     db.Workout.findByIdAndDelete(body.id)
         .then((data) => {
