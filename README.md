@@ -1,5 +1,6 @@
 # Fitness Tracker
 Application to allow users to view, create, and track daily workouts
+![Click to view deployed application on Heroku](______________)
 
 
 ## My Task
@@ -19,15 +20,16 @@ My task this week is to create a workout tracker application. I was provided wit
 
 ## Technologies Used
 ```
-1. JavaScript
-2. Express.js
-3. Node.js
-4. MongoDB
-5. Mongoose
+1. MongoDB
+2. Mongoose
+3. JavaScript 
+4. Express.js
+5. Node.js
 6. Robo3T
 7. Heroku
 8. HTML and CSS
 9. Compression
+10. Insomnia
 ```
 
 ## User Story
