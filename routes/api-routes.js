@@ -10,7 +10,9 @@ const path = require('path');
 // Get (read) workouts
 // WORKS
 router.get('/api/workouts', (req, res) => {
-    db.Workout.find({})
+    db.Workout.aggregate([
+        { $addFields: { totalDuration: { $sum: '$exercises.duration' } } }
+      ])
         .then(fitnessDB => {
             res.json(fitnessDB)
         })
