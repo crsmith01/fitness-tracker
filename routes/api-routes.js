@@ -55,26 +55,21 @@ router.post('/api/workouts', (req, res) => {
 
 // Put (update) workouts
 // findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
-router.put('api/workouts/:id', ({ body, params }, res) => {
+
+router.put('/api/workouts/:id', ({ body , params }, res) => {
+    console.log({ body })
     db.Workout.findByIdAndUpdate(
-        params.id, {
-        $push: {
-            exercises: body
-        }
-    },
-        {
-            new: true, runValidators: true
-        }
+        params.id,
+        { $push: { exercises: body } },
+        { new: true, runValidators: true }
     )
-        .then((fitnessDB) => {
+        .then(fitnessDB => {
             res.json(fitnessDB);
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(err => {
             res.json(err);
-        });
+        })
 });
-
 
 // Delete (remove) workout
 // findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
