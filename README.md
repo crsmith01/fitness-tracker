@@ -1,5 +1,6 @@
 # Fitness Tracker
-Application to allow users to view, create, and track daily workouts
+Application to allow users to view, create, and track daily workouts.
+
 [Click to view deployed application on Heroku](https://protected-tundra-70136.herokuapp.com/)
 
 
