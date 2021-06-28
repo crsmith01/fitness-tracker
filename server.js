@@ -22,7 +22,7 @@ app.use(compression());
 // Connect to Mongoose database and logging port
 // process.env.MONGODB_URI is used for Heroku deployment
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
-    // Handle deprecation warnings:
+//  Handle deprecation warnings:
     // because of the deprecation warning with the tool MongoDB Node.js uses to parse MongoDB Connection Strings
     useNewUrlParser: true,
     // if using findOneAndUpdate() or findOneAndDelete in api routes - need to use useFindAndModify: false - because of deprecation warnings

@@ -14,9 +14,8 @@ My task this week is to create a workout tracker application. I was provided wit
 3. [Business Context](#Business-Context)
 4. [Acceptance Criteria](#Acceptance-Criteria)
 5. [Mock Up](#Mock-Up)
-6. [Usage](#Usage)
-7. [Contact](#Contact)
-8. [License](#License)
+6. [Contact](#Contact)
+7. [License](#License)
 
 ## Technologies Used
 ```
@@ -29,7 +28,7 @@ My task this week is to create a workout tracker application. I was provided wit
 7. Heroku
 8. HTML and CSS
 9. Compression
-10. Insomnia
+10. Insomnia (for API testing)
 ```
 
 ## User Story
@@ -57,18 +56,15 @@ The user should be able to:
 ```
 
 ## Mock-Up
-##### UPDATE UPDATE UPDATE
+The follow images demonstrate the app's functionality:
+![Dashboard](/public/assets/images/dashboard.png)
+![Stats](/public/assets/images/stats.png)
+
 The following link leads to the GitHub repository for this app:
 ![GitHub Link](https://github.com/crsmith01/fitness-tracker)
 
 The following link leads to the deployed application on Heroku:
 ![Heroku Link](_____________)
-
-## Usage
-<!-- UPDATE UPDATE UPDATE -->
-1. Install dependencies: ```npm install```
-
-2. Start the server with ```npm start```
 
 ## Contact
 If you have any questions about the repo, contact me at [crsmith01](https://github.com/crsmith01).
