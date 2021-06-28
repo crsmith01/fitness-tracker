@@ -58,6 +58,7 @@ The user should be able to:
 ## Mock-Up
 The follow images demonstrate the app's functionality:
 ![Dashboard](/public/assets/images/dashboard.png)
+![Add Exercise](/public/assets/images/add-exercise.png)
 ![Stats](/public/assets/images/stats.png)
 
 The following link leads to the GitHub repository for this app:
