@@ -8,11 +8,11 @@ const path = require('path');
 // endpoints defined in api.js file in public folder
 
 // Get (read) workouts
+// WORKS
 router.get('/api/workouts', (req, res) => {
     db.Workout.find({})
         .then(fitnessDB => {
             res.json(fitnessDB)
-            console.log('testing api/workouts route')
         })
         .catch((err) => {
             console.log(err);
@@ -41,6 +41,7 @@ router.get('api/workouts/range', (req, res) => {
 });
 
 // Post (create/insert) workouts
+// WORKS
 router.post('/api/workouts', (req, res) => {
     db.Workout.create({})
         .then((fitnessDB) => {
@@ -54,29 +55,30 @@ router.post('/api/workouts', (req, res) => {
 
 // Put (update) workouts
 // findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).
-// router.put('api/workouts/:id', ({ body, params }, res => {
-//     db.Workout.findByIdAndUpdate(
-//         params.id, {
-//         $push: {
-//             exercises: body
-//         }
-//     },
-//         {
-//             new: true, runValidators: true
-//         }
-//     )
-//         .then((fitnessDB) => {
-//             res.json(fitnessDB);
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//             res.json(err);
-//         });
-// }));
+router.put('api/workouts/:id', ({ body, params }, res) => {
+    db.Workout.findByIdAndUpdate(
+        params.id, {
+        $push: {
+            exercises: body
+        }
+    },
+        {
+            new: true, runValidators: true
+        }
+    )
+        .then((fitnessDB) => {
+            res.json(fitnessDB);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.json(err);
+        });
+});
 
 
 // Delete (remove) workout
 // findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
+// WORKS
 router.delete('/api/workouts/:id', ({ body, params }, res) => {
     db.Workout.findByIdAndDelete(body.id)
         .then((data) => {
