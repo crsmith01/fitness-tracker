@@ -1,11 +1,10 @@
 // Dependencies
 const router = require('express').Router();
 const path = require('path');
-console.log('routes running');
 
 // 3 get routes - exercise.html, index.html, and stats.html in public folder 
 router.get('/', (req, res) => {
-    // Index.html is rendered at endpoint /
+    // homepage.html is rendered at endpoint /
     res.sendFile(path.join(__dirname, '../public/homepage.html'));
 });
 
