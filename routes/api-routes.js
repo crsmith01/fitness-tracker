@@ -4,16 +4,16 @@ const db = require('../models');
 const path = require('path');
 
 
-// use aggregate function to dynamically add up and return the total duration for each workout
+// use aggregate method to dynamically add up and return the total duration for each workout
 // endpoints defined in api.js file in public folder
 
 // Get (read) workouts
 router.get('/api/workouts', (req, res) => {
-    console.log('hi - this is not showing so this routes is not hitting');
+    console.log('hi - this is not showing so this route is not hitting???')
     db.Workout.find({})
         .then(fitnessDB => {
             res.json(fitnessDB)
-            console.log('testing /api/workouts route')
+            console.log('testing api/workouts route')
         })
         .catch((err) => {
             console.log(err);
