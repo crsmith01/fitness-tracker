@@ -1,6 +1,6 @@
 // Dependencies
 const express = require("express");
-// const logger = require("morgan");
+const logger = require("morgan");
 const mongoose = require("mongoose");
 // const compression = require('compression');
 
@@ -13,14 +13,14 @@ const db = require("./models");
 const app = express();
 
 // Middleware
-// app.use(logger("dev"));
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 // app.use(compression());
 
 // Connect to Mongoose database and logging port
-// mongodb_uri is used for Heroku deployment
+// process.env.MONGODB_URI is used for Heroku deployment
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
     // to handle deprecation warnings
     // because of the deprecation warning with the tool MongoDB Node.js uses to parse MongoDB Connection Strings
