@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const compression = require('compression');
 
 // Port
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 80;
 
 // Require the models folder for the database
 const db = require("./models");
@@ -37,6 +37,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 app.use(require('./routes'));
 
 // Calling server to listen
-app.listen(3002, () => {
+app.listen(80, () => {
     console.log(`App running on port ${PORT}!`);
 });
